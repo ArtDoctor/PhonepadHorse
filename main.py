@@ -9,7 +9,6 @@ class problemSolver:
         pass
 
     def solve(self, position, n):
-        res = 0
         if position == 5:
             return 1
         else:
@@ -28,7 +27,7 @@ class problemSolver:
 
 
 solver = problemSolver()
-print(solver.solve(3, 2))
+print(solver.solve(3, 3))
 
 # Tests:
 """
@@ -36,4 +35,6 @@ position = 5, n = any -> 1
 position = 1, n = 1   -> 2
 position = 1, n = 2   -> 5
 position = 1, n = 3   -> 10
+position = 3, n = 3   -> 10
+position = 0, n = 3   -> 12
 """
