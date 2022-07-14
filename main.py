@@ -35,5 +35,5 @@ print(solver.solve(3, 2))
 position = 5, n = any -> 1
 position = 1, n = 1   -> 2
 position = 1, n = 2   -> 5
-position = 1, n = 3   -> 5
+position = 1, n = 3   -> 10
 """
