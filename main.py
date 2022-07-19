@@ -10,25 +10,28 @@ class problemSolver:
         if position == 5:
             return 1
         else:
-            possiblePositions = [position]
+            possiblePositions = [0]*10
+            possiblePositions[position] = 1
             hop = 0
-            print("Start position:", possiblePositions)
+            print("Start positions:", possiblePositions)
             while hop < n:
                 # Every hop we calculate for each possible position possible positions
                 hop += 1
-                tempArray = []
-                for i in possiblePositions:
-                    tempArray += self.numPadMoves[i]
+                tempArray = [0]*10
+                for i in range(0, len(possiblePositions)):
+                    moves = self.numPadMoves[i]
+                    for move in moves:
+                        tempArray[move] += possiblePositions[i]
                 possiblePositions = tempArray
                 print("Hop", hop, ":", possiblePositions)
             # Result is the amount of possible positions
-            res = len(possiblePositions)
+            res = sum(possiblePositions)
             # They will be distinct for sure
             return res
 
 
 solver = problemSolver()
-print(solver.solve(1, 3))
+print(solver.solve(0, 3))
 
 # Tests:
 """
